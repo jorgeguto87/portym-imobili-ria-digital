@@ -145,7 +145,7 @@ export function PriceCalculator() {
       <div>
         <label className="text-sm font-semibold text-muted-foreground" htmlFor="calc">Quantos imóveis você administra?</label>
         <p className="mt-2 font-display text-5xl font-extrabold text-primary">{n >= 600 ? "500+" : n}</p>
-        <Slider id="calc" className="mt-6" min={1} max={600} step={1} value={[n]} onValueChange={(v) => setN(v[0])} aria-label="Quantidade de imóveis" />
+        <Slider id="calc" className="mt-6" min={1} max={600} step={1} value={[n]} onValueChange={(v) => setN(v[0] ?? 1)} aria-label="Quantidade de imóveis" />
         <div className="mt-6">
           <CycleToggle cycle={cycle} onChange={setCycle} />
         </div>

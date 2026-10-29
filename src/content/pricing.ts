@@ -22,7 +22,7 @@ export function priceFor(plan: Plan, cycle: "mensal" | "anual"): number | null {
 
 /** Menor plano que comporta a quantidade de imóveis. */
 export function planForProperties(count: number): Plan {
-  return PLANS.find((p) => p.maxProperties != null && count <= p.maxProperties) ?? PLANS[PLANS.length - 1];
+  return PLANS.find((p) => p.maxProperties != null && count <= p.maxProperties) ?? PLANS[PLANS.length - 1]!;
 }
 
 export const brl = (v: number) => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });

@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CobrancaDeAluguelRouteImport } from './routes/cobranca-de-aluguel'
+import { Route as ContatoRouteImport } from './routes/contato'
 import { Route as CrmImobiliarioRouteImport } from './routes/crm-imobiliario'
 import { Route as FuncionalidadesRouteImport } from './routes/funcionalidades'
 import { Route as GestaoDeLocacaoRouteImport } from './routes/gestao-de-locacao'
@@ -26,6 +27,8 @@ import { Route as SobreRouteImport } from './routes/sobre'
 import { Route as TermosRouteImport } from './routes/termos'
 import { Route as VendasEComissoesRouteImport } from './routes/vendas-e-comissoes'
 import { Route as WhatsappParaImobiliariaRouteImport } from './routes/whatsapp-para-imobiliaria'
+import { Route as BlogIndexRouteImport } from './routes/blog/index'
+import { Route as BlogSlugRouteImport } from './routes/blog/$slug'
 import { Route as ComparativoKenloRouteImport } from './routes/comparativo.kenlo'
 import { Route as ComparativoPlanilhaRouteImport } from './routes/comparativo.planilha'
 
@@ -37,6 +40,11 @@ const IndexRoute = IndexRouteImport.update({
 const CobrancaDeAluguelRoute = CobrancaDeAluguelRouteImport.update({
   id: '/cobranca-de-aluguel',
   path: '/cobranca-de-aluguel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContatoRoute = ContatoRouteImport.update({
+  id: '/contato',
+  path: '/contato',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CrmImobiliarioRoute = CrmImobiliarioRouteImport.update({
@@ -115,6 +123,16 @@ const WhatsappParaImobiliariaRoute = WhatsappParaImobiliariaRouteImport.update({
   path: '/whatsapp-para-imobiliaria',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ComparativoKenloRoute = ComparativoKenloRouteImport.update({
   id: '/comparativo/kenlo',
   path: '/comparativo/kenlo',
@@ -129,6 +147,7 @@ const ComparativoPlanilhaRoute = ComparativoPlanilhaRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/cobranca-de-aluguel': typeof CobrancaDeAluguelRoute
+  '/contato': typeof ContatoRoute
   '/crm-imobiliario': typeof CrmImobiliarioRoute
   '/funcionalidades': typeof FuncionalidadesRoute
   '/gestao-de-locacao': typeof GestaoDeLocacaoRoute
@@ -144,12 +163,15 @@ export interface FileRoutesByFullPath {
   '/termos': typeof TermosRoute
   '/vendas-e-comissoes': typeof VendasEComissoesRoute
   '/whatsapp-para-imobiliaria': typeof WhatsappParaImobiliariaRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/comparativo/kenlo': typeof ComparativoKenloRoute
   '/comparativo/planilha': typeof ComparativoPlanilhaRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/cobranca-de-aluguel': typeof CobrancaDeAluguelRoute
+  '/contato': typeof ContatoRoute
   '/crm-imobiliario': typeof CrmImobiliarioRoute
   '/funcionalidades': typeof FuncionalidadesRoute
   '/gestao-de-locacao': typeof GestaoDeLocacaoRoute
@@ -165,13 +187,16 @@ export interface FileRoutesByTo {
   '/termos': typeof TermosRoute
   '/vendas-e-comissoes': typeof VendasEComissoesRoute
   '/whatsapp-para-imobiliaria': typeof WhatsappParaImobiliariaRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/comparativo/kenlo': typeof ComparativoKenloRoute
   '/comparativo/planilha': typeof ComparativoPlanilhaRoute
+  '/blog': typeof BlogIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/cobranca-de-aluguel': typeof CobrancaDeAluguelRoute
+  '/contato': typeof ContatoRoute
   '/crm-imobiliario': typeof CrmImobiliarioRoute
   '/funcionalidades': typeof FuncionalidadesRoute
   '/gestao-de-locacao': typeof GestaoDeLocacaoRoute
@@ -187,14 +212,17 @@ export interface FileRoutesById {
   '/termos': typeof TermosRoute
   '/vendas-e-comissoes': typeof VendasEComissoesRoute
   '/whatsapp-para-imobiliaria': typeof WhatsappParaImobiliariaRoute
+  '/blog/$slug': typeof BlogSlugRoute
   '/comparativo/kenlo': typeof ComparativoKenloRoute
   '/comparativo/planilha': typeof ComparativoPlanilhaRoute
+  '/blog/': typeof BlogIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/cobranca-de-aluguel'
+    | '/contato'
     | '/crm-imobiliario'
     | '/funcionalidades'
     | '/gestao-de-locacao'
@@ -210,12 +238,15 @@ export interface FileRouteTypes {
     | '/termos'
     | '/vendas-e-comissoes'
     | '/whatsapp-para-imobiliaria'
+    | '/blog/$slug'
     | '/comparativo/kenlo'
     | '/comparativo/planilha'
+    | '/blog/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/cobranca-de-aluguel'
+    | '/contato'
     | '/crm-imobiliario'
     | '/funcionalidades'
     | '/gestao-de-locacao'
@@ -231,12 +262,15 @@ export interface FileRouteTypes {
     | '/termos'
     | '/vendas-e-comissoes'
     | '/whatsapp-para-imobiliaria'
+    | '/blog/$slug'
     | '/comparativo/kenlo'
     | '/comparativo/planilha'
+    | '/blog'
   id:
     | '__root__'
     | '/'
     | '/cobranca-de-aluguel'
+    | '/contato'
     | '/crm-imobiliario'
     | '/funcionalidades'
     | '/gestao-de-locacao'
@@ -252,13 +286,16 @@ export interface FileRouteTypes {
     | '/termos'
     | '/vendas-e-comissoes'
     | '/whatsapp-para-imobiliaria'
+    | '/blog/$slug'
     | '/comparativo/kenlo'
     | '/comparativo/planilha'
+    | '/blog/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CobrancaDeAluguelRoute: typeof CobrancaDeAluguelRoute
+  ContatoRoute: typeof ContatoRoute
   CrmImobiliarioRoute: typeof CrmImobiliarioRoute
   FuncionalidadesRoute: typeof FuncionalidadesRoute
   GestaoDeLocacaoRoute: typeof GestaoDeLocacaoRoute
@@ -274,8 +311,10 @@ export interface RootRouteChildren {
   TermosRoute: typeof TermosRoute
   VendasEComissoesRoute: typeof VendasEComissoesRoute
   WhatsappParaImobiliariaRoute: typeof WhatsappParaImobiliariaRoute
+  BlogSlugRoute: typeof BlogSlugRoute
   ComparativoKenloRoute: typeof ComparativoKenloRoute
   ComparativoPlanilhaRoute: typeof ComparativoPlanilhaRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -292,6 +331,13 @@ declare module '@tanstack/react-router' {
       path: '/cobranca-de-aluguel'
       fullPath: '/cobranca-de-aluguel'
       preLoaderRoute: typeof CobrancaDeAluguelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contato': {
+      id: '/contato'
+      path: '/contato'
+      fullPath: '/contato'
+      preLoaderRoute: typeof ContatoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/crm-imobiliario': {
@@ -399,6 +445,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WhatsappParaImobiliariaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/blog/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/comparativo/kenlo': {
       id: '/comparativo/kenlo'
       path: '/comparativo/kenlo'
@@ -419,6 +479,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CobrancaDeAluguelRoute: CobrancaDeAluguelRoute,
+  ContatoRoute: ContatoRoute,
   CrmImobiliarioRoute: CrmImobiliarioRoute,
   FuncionalidadesRoute: FuncionalidadesRoute,
   GestaoDeLocacaoRoute: GestaoDeLocacaoRoute,
@@ -434,8 +495,10 @@ const rootRouteChildren: RootRouteChildren = {
   TermosRoute: TermosRoute,
   VendasEComissoesRoute: VendasEComissoesRoute,
   WhatsappParaImobiliariaRoute: WhatsappParaImobiliariaRoute,
+  BlogSlugRoute: BlogSlugRoute,
   ComparativoKenloRoute: ComparativoKenloRoute,
   ComparativoPlanilhaRoute: ComparativoPlanilhaRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
