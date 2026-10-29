@@ -38,7 +38,7 @@ function Contato() {
             <label key={k} className="block text-sm font-semibold capitalize">{k === "email" ? "E-mail" : "Nome"}
               <input name={k} className={f} />{errors[k] && <span className="text-sm text-destructive">{errors[k]}</span>}</label>
           ))}
-          <label className="block text-sm font-semibold">Mensagem<textarea name="mensagem" rows={5} className={f} />{errors.mensagem && <span className="text-sm text-destructive">{errors.mensagem}</span>}</label>
+          <label className="block text-sm font-semibold">Mensagem<textarea name="mensagem" rows={5} className={f} />{errors["mensagem"] && <span className="text-sm text-destructive">{errors["mensagem"]}</span>}</label>
           <button className="w-full rounded-full bg-primary py-3 font-semibold text-primary-foreground">Enviar mensagem</button>
           {ok && <p className="text-center text-primary">Mensagem pronta! Abrimos o WhatsApp para você enviar.</p>}
         </form>
