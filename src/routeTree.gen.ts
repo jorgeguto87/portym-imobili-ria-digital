@@ -10,33 +10,272 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as CobrancaDeAluguelRouteImport } from './routes/cobranca-de-aluguel'
+import { Route as CrmImobiliarioRouteImport } from './routes/crm-imobiliario'
+import { Route as FuncionalidadesRouteImport } from './routes/funcionalidades'
+import { Route as GestaoDeLocacaoRouteImport } from './routes/gestao-de-locacao'
+import { Route as ParaCorretoresRouteImport } from './routes/para-corretores'
+import { Route as ParaImobiliariasRouteImport } from './routes/para-imobiliarias'
+import { Route as PortalDoInquilinoEProprietarioRouteImport } from './routes/portal-do-inquilino-e-proprietario'
+import { Route as PortfolioDeImoveisRouteImport } from './routes/portfolio-de-imoveis'
+import { Route as PrecosRouteImport } from './routes/precos'
+import { Route as PrivacidadeRouteImport } from './routes/privacidade'
+import { Route as ReajusteDeAluguelRouteImport } from './routes/reajuste-de-aluguel'
+import { Route as RepasseAutomaticoRouteImport } from './routes/repasse-automatico'
+import { Route as SobreRouteImport } from './routes/sobre'
+import { Route as TermosRouteImport } from './routes/termos'
+import { Route as VendasEComissoesRouteImport } from './routes/vendas-e-comissoes'
+import { Route as WhatsappParaImobiliariaRouteImport } from './routes/whatsapp-para-imobiliaria'
+import { Route as ComparativoKenloRouteImport } from './routes/comparativo.kenlo'
+import { Route as ComparativoPlanilhaRouteImport } from './routes/comparativo.planilha'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CobrancaDeAluguelRoute = CobrancaDeAluguelRouteImport.update({
+  id: '/cobranca-de-aluguel',
+  path: '/cobranca-de-aluguel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CrmImobiliarioRoute = CrmImobiliarioRouteImport.update({
+  id: '/crm-imobiliario',
+  path: '/crm-imobiliario',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FuncionalidadesRoute = FuncionalidadesRouteImport.update({
+  id: '/funcionalidades',
+  path: '/funcionalidades',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GestaoDeLocacaoRoute = GestaoDeLocacaoRouteImport.update({
+  id: '/gestao-de-locacao',
+  path: '/gestao-de-locacao',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParaCorretoresRoute = ParaCorretoresRouteImport.update({
+  id: '/para-corretores',
+  path: '/para-corretores',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ParaImobiliariasRoute = ParaImobiliariasRouteImport.update({
+  id: '/para-imobiliarias',
+  path: '/para-imobiliarias',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalDoInquilinoEProprietarioRoute =
+  PortalDoInquilinoEProprietarioRouteImport.update({
+    id: '/portal-do-inquilino-e-proprietario',
+    path: '/portal-do-inquilino-e-proprietario',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PortfolioDeImoveisRoute = PortfolioDeImoveisRouteImport.update({
+  id: '/portfolio-de-imoveis',
+  path: '/portfolio-de-imoveis',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrecosRoute = PrecosRouteImport.update({
+  id: '/precos',
+  path: '/precos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacidadeRoute = PrivacidadeRouteImport.update({
+  id: '/privacidade',
+  path: '/privacidade',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReajusteDeAluguelRoute = ReajusteDeAluguelRouteImport.update({
+  id: '/reajuste-de-aluguel',
+  path: '/reajuste-de-aluguel',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RepasseAutomaticoRoute = RepasseAutomaticoRouteImport.update({
+  id: '/repasse-automatico',
+  path: '/repasse-automatico',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SobreRoute = SobreRouteImport.update({
+  id: '/sobre',
+  path: '/sobre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermosRoute = TermosRouteImport.update({
+  id: '/termos',
+  path: '/termos',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VendasEComissoesRoute = VendasEComissoesRouteImport.update({
+  id: '/vendas-e-comissoes',
+  path: '/vendas-e-comissoes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WhatsappParaImobiliariaRoute = WhatsappParaImobiliariaRouteImport.update({
+  id: '/whatsapp-para-imobiliaria',
+  path: '/whatsapp-para-imobiliaria',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparativoKenloRoute = ComparativoKenloRouteImport.update({
+  id: '/comparativo/kenlo',
+  path: '/comparativo/kenlo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparativoPlanilhaRoute = ComparativoPlanilhaRouteImport.update({
+  id: '/comparativo/planilha',
+  path: '/comparativo/planilha',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cobranca-de-aluguel': typeof CobrancaDeAluguelRoute
+  '/crm-imobiliario': typeof CrmImobiliarioRoute
+  '/funcionalidades': typeof FuncionalidadesRoute
+  '/gestao-de-locacao': typeof GestaoDeLocacaoRoute
+  '/para-corretores': typeof ParaCorretoresRoute
+  '/para-imobiliarias': typeof ParaImobiliariasRoute
+  '/portal-do-inquilino-e-proprietario': typeof PortalDoInquilinoEProprietarioRoute
+  '/portfolio-de-imoveis': typeof PortfolioDeImoveisRoute
+  '/precos': typeof PrecosRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/reajuste-de-aluguel': typeof ReajusteDeAluguelRoute
+  '/repasse-automatico': typeof RepasseAutomaticoRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
+  '/vendas-e-comissoes': typeof VendasEComissoesRoute
+  '/whatsapp-para-imobiliaria': typeof WhatsappParaImobiliariaRoute
+  '/comparativo/kenlo': typeof ComparativoKenloRoute
+  '/comparativo/planilha': typeof ComparativoPlanilhaRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cobranca-de-aluguel': typeof CobrancaDeAluguelRoute
+  '/crm-imobiliario': typeof CrmImobiliarioRoute
+  '/funcionalidades': typeof FuncionalidadesRoute
+  '/gestao-de-locacao': typeof GestaoDeLocacaoRoute
+  '/para-corretores': typeof ParaCorretoresRoute
+  '/para-imobiliarias': typeof ParaImobiliariasRoute
+  '/portal-do-inquilino-e-proprietario': typeof PortalDoInquilinoEProprietarioRoute
+  '/portfolio-de-imoveis': typeof PortfolioDeImoveisRoute
+  '/precos': typeof PrecosRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/reajuste-de-aluguel': typeof ReajusteDeAluguelRoute
+  '/repasse-automatico': typeof RepasseAutomaticoRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
+  '/vendas-e-comissoes': typeof VendasEComissoesRoute
+  '/whatsapp-para-imobiliaria': typeof WhatsappParaImobiliariaRoute
+  '/comparativo/kenlo': typeof ComparativoKenloRoute
+  '/comparativo/planilha': typeof ComparativoPlanilhaRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cobranca-de-aluguel': typeof CobrancaDeAluguelRoute
+  '/crm-imobiliario': typeof CrmImobiliarioRoute
+  '/funcionalidades': typeof FuncionalidadesRoute
+  '/gestao-de-locacao': typeof GestaoDeLocacaoRoute
+  '/para-corretores': typeof ParaCorretoresRoute
+  '/para-imobiliarias': typeof ParaImobiliariasRoute
+  '/portal-do-inquilino-e-proprietario': typeof PortalDoInquilinoEProprietarioRoute
+  '/portfolio-de-imoveis': typeof PortfolioDeImoveisRoute
+  '/precos': typeof PrecosRoute
+  '/privacidade': typeof PrivacidadeRoute
+  '/reajuste-de-aluguel': typeof ReajusteDeAluguelRoute
+  '/repasse-automatico': typeof RepasseAutomaticoRoute
+  '/sobre': typeof SobreRoute
+  '/termos': typeof TermosRoute
+  '/vendas-e-comissoes': typeof VendasEComissoesRoute
+  '/whatsapp-para-imobiliaria': typeof WhatsappParaImobiliariaRoute
+  '/comparativo/kenlo': typeof ComparativoKenloRoute
+  '/comparativo/planilha': typeof ComparativoPlanilhaRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/cobranca-de-aluguel'
+    | '/crm-imobiliario'
+    | '/funcionalidades'
+    | '/gestao-de-locacao'
+    | '/para-corretores'
+    | '/para-imobiliarias'
+    | '/portal-do-inquilino-e-proprietario'
+    | '/portfolio-de-imoveis'
+    | '/precos'
+    | '/privacidade'
+    | '/reajuste-de-aluguel'
+    | '/repasse-automatico'
+    | '/sobre'
+    | '/termos'
+    | '/vendas-e-comissoes'
+    | '/whatsapp-para-imobiliaria'
+    | '/comparativo/kenlo'
+    | '/comparativo/planilha'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/cobranca-de-aluguel'
+    | '/crm-imobiliario'
+    | '/funcionalidades'
+    | '/gestao-de-locacao'
+    | '/para-corretores'
+    | '/para-imobiliarias'
+    | '/portal-do-inquilino-e-proprietario'
+    | '/portfolio-de-imoveis'
+    | '/precos'
+    | '/privacidade'
+    | '/reajuste-de-aluguel'
+    | '/repasse-automatico'
+    | '/sobre'
+    | '/termos'
+    | '/vendas-e-comissoes'
+    | '/whatsapp-para-imobiliaria'
+    | '/comparativo/kenlo'
+    | '/comparativo/planilha'
+  id:
+    | '__root__'
+    | '/'
+    | '/cobranca-de-aluguel'
+    | '/crm-imobiliario'
+    | '/funcionalidades'
+    | '/gestao-de-locacao'
+    | '/para-corretores'
+    | '/para-imobiliarias'
+    | '/portal-do-inquilino-e-proprietario'
+    | '/portfolio-de-imoveis'
+    | '/precos'
+    | '/privacidade'
+    | '/reajuste-de-aluguel'
+    | '/repasse-automatico'
+    | '/sobre'
+    | '/termos'
+    | '/vendas-e-comissoes'
+    | '/whatsapp-para-imobiliaria'
+    | '/comparativo/kenlo'
+    | '/comparativo/planilha'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CobrancaDeAluguelRoute: typeof CobrancaDeAluguelRoute
+  CrmImobiliarioRoute: typeof CrmImobiliarioRoute
+  FuncionalidadesRoute: typeof FuncionalidadesRoute
+  GestaoDeLocacaoRoute: typeof GestaoDeLocacaoRoute
+  ParaCorretoresRoute: typeof ParaCorretoresRoute
+  ParaImobiliariasRoute: typeof ParaImobiliariasRoute
+  PortalDoInquilinoEProprietarioRoute: typeof PortalDoInquilinoEProprietarioRoute
+  PortfolioDeImoveisRoute: typeof PortfolioDeImoveisRoute
+  PrecosRoute: typeof PrecosRoute
+  PrivacidadeRoute: typeof PrivacidadeRoute
+  ReajusteDeAluguelRoute: typeof ReajusteDeAluguelRoute
+  RepasseAutomaticoRoute: typeof RepasseAutomaticoRoute
+  SobreRoute: typeof SobreRoute
+  TermosRoute: typeof TermosRoute
+  VendasEComissoesRoute: typeof VendasEComissoesRoute
+  WhatsappParaImobiliariaRoute: typeof WhatsappParaImobiliariaRoute
+  ComparativoKenloRoute: typeof ComparativoKenloRoute
+  ComparativoPlanilhaRoute: typeof ComparativoPlanilhaRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +287,155 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cobranca-de-aluguel': {
+      id: '/cobranca-de-aluguel'
+      path: '/cobranca-de-aluguel'
+      fullPath: '/cobranca-de-aluguel'
+      preLoaderRoute: typeof CobrancaDeAluguelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/crm-imobiliario': {
+      id: '/crm-imobiliario'
+      path: '/crm-imobiliario'
+      fullPath: '/crm-imobiliario'
+      preLoaderRoute: typeof CrmImobiliarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/funcionalidades': {
+      id: '/funcionalidades'
+      path: '/funcionalidades'
+      fullPath: '/funcionalidades'
+      preLoaderRoute: typeof FuncionalidadesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gestao-de-locacao': {
+      id: '/gestao-de-locacao'
+      path: '/gestao-de-locacao'
+      fullPath: '/gestao-de-locacao'
+      preLoaderRoute: typeof GestaoDeLocacaoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/para-corretores': {
+      id: '/para-corretores'
+      path: '/para-corretores'
+      fullPath: '/para-corretores'
+      preLoaderRoute: typeof ParaCorretoresRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/para-imobiliarias': {
+      id: '/para-imobiliarias'
+      path: '/para-imobiliarias'
+      fullPath: '/para-imobiliarias'
+      preLoaderRoute: typeof ParaImobiliariasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal-do-inquilino-e-proprietario': {
+      id: '/portal-do-inquilino-e-proprietario'
+      path: '/portal-do-inquilino-e-proprietario'
+      fullPath: '/portal-do-inquilino-e-proprietario'
+      preLoaderRoute: typeof PortalDoInquilinoEProprietarioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio-de-imoveis': {
+      id: '/portfolio-de-imoveis'
+      path: '/portfolio-de-imoveis'
+      fullPath: '/portfolio-de-imoveis'
+      preLoaderRoute: typeof PortfolioDeImoveisRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/precos': {
+      id: '/precos'
+      path: '/precos'
+      fullPath: '/precos'
+      preLoaderRoute: typeof PrecosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacidade': {
+      id: '/privacidade'
+      path: '/privacidade'
+      fullPath: '/privacidade'
+      preLoaderRoute: typeof PrivacidadeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reajuste-de-aluguel': {
+      id: '/reajuste-de-aluguel'
+      path: '/reajuste-de-aluguel'
+      fullPath: '/reajuste-de-aluguel'
+      preLoaderRoute: typeof ReajusteDeAluguelRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/repasse-automatico': {
+      id: '/repasse-automatico'
+      path: '/repasse-automatico'
+      fullPath: '/repasse-automatico'
+      preLoaderRoute: typeof RepasseAutomaticoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sobre': {
+      id: '/sobre'
+      path: '/sobre'
+      fullPath: '/sobre'
+      preLoaderRoute: typeof SobreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/termos': {
+      id: '/termos'
+      path: '/termos'
+      fullPath: '/termos'
+      preLoaderRoute: typeof TermosRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/vendas-e-comissoes': {
+      id: '/vendas-e-comissoes'
+      path: '/vendas-e-comissoes'
+      fullPath: '/vendas-e-comissoes'
+      preLoaderRoute: typeof VendasEComissoesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/whatsapp-para-imobiliaria': {
+      id: '/whatsapp-para-imobiliaria'
+      path: '/whatsapp-para-imobiliaria'
+      fullPath: '/whatsapp-para-imobiliaria'
+      preLoaderRoute: typeof WhatsappParaImobiliariaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparativo/kenlo': {
+      id: '/comparativo/kenlo'
+      path: '/comparativo/kenlo'
+      fullPath: '/comparativo/kenlo'
+      preLoaderRoute: typeof ComparativoKenloRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparativo/planilha': {
+      id: '/comparativo/planilha'
+      path: '/comparativo/planilha'
+      fullPath: '/comparativo/planilha'
+      preLoaderRoute: typeof ComparativoPlanilhaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CobrancaDeAluguelRoute: CobrancaDeAluguelRoute,
+  CrmImobiliarioRoute: CrmImobiliarioRoute,
+  FuncionalidadesRoute: FuncionalidadesRoute,
+  GestaoDeLocacaoRoute: GestaoDeLocacaoRoute,
+  ParaCorretoresRoute: ParaCorretoresRoute,
+  ParaImobiliariasRoute: ParaImobiliariasRoute,
+  PortalDoInquilinoEProprietarioRoute: PortalDoInquilinoEProprietarioRoute,
+  PortfolioDeImoveisRoute: PortfolioDeImoveisRoute,
+  PrecosRoute: PrecosRoute,
+  PrivacidadeRoute: PrivacidadeRoute,
+  ReajusteDeAluguelRoute: ReajusteDeAluguelRoute,
+  RepasseAutomaticoRoute: RepasseAutomaticoRoute,
+  SobreRoute: SobreRoute,
+  TermosRoute: TermosRoute,
+  VendasEComissoesRoute: VendasEComissoesRoute,
+  WhatsappParaImobiliariaRoute: WhatsappParaImobiliariaRoute,
+  ComparativoKenloRoute: ComparativoKenloRoute,
+  ComparativoPlanilhaRoute: ComparativoPlanilhaRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
