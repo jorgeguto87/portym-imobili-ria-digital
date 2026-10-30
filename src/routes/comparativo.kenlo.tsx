@@ -14,7 +14,7 @@ function Page() {
   return (
     <>
       <PageHero title="Portym x Kenlo" subtitle="Comparativo neutro: preço publicado, usuários ilimitados e automação nativa." />
-      <Section><ComparisonTable bLabel="Kenlo" rows={[{label:"Preço publicado no site",a:true,b:"Consulte o fornecedor"},{label:"Usuários ilimitados",a:true,b:"Consulte o fornecedor"},{label:"Atendente no WhatsApp",a:"Nativo",b:"Consulte o fornecedor"},{label:"Repasse por Pix",a:"Automático",b:"Consulte o fornecedor"}]} /></Section>
+      <Section><ComparisonTable bLabel="Kenlo" rows={[{label:"Preço publicado no site",a:true,b:"Consulte o fornecedor"},{label:"Usuários ilimitados",a:true,b:"Consulte o fornecedor"},{label:"Robô de atendimento no WhatsApp",a:"Nativo",b:"Consulte o fornecedor"},{label:"Repasse por Pix",a:"Automático",b:"Consulte o fornecedor"}]} /></Section>
       <FinalCta />
     </>
   );

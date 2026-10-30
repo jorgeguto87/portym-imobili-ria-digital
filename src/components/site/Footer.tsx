@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import { Lock, MessageCircle, ShieldCheck, Mail } from "lucide-react";
-import { FEATURES, NAV_COMPARE, NAV_SEGMENTS, SITE, whatsappLink } from "@/content/site";
+import { Lock, ShieldCheck, Mail } from "lucide-react";
+import { FEATURES, NAV_COMPARE, NAV_SEGMENTS, SITE } from "@/content/site";
 import { Logo } from "./ui";
 
 export function Footer() {
@@ -16,9 +16,6 @@ export function Footer() {
               O sistema que coloca sua imobiliária no automático: atendimento, cobrança, repasse e portfólio num só lugar.
             </p>
             <div className="mt-5 space-y-2 text-sm">
-              <a className={`flex items-center gap-2 text-ink-foreground/80 ${a}`} href={whatsappLink("Olá! Quero saber mais sobre o Portym.")} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="h-4 w-4" /> WhatsApp
-              </a>
               <a className={`flex items-center gap-2 text-ink-foreground/80 ${a}`} href={`mailto:${SITE.email}`}>
                 <Mail className="h-4 w-4" /> {SITE.email}
               </a>

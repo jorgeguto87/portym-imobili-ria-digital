@@ -3,6 +3,7 @@ import type { FeatureContent } from "@/content/features";
 import { pageHead, faqJsonLd } from "@/lib/seo";
 import { DashboardMockup } from "./DashboardMockup";
 import { PhoneMockup } from "./PhoneMockup";
+import { ScreenShot } from "./ScreenShot";
 import { FAQAccordion, FeatureGrid } from "./blocks";
 import { CtaButton, FinalCta, PageHero, Reveal, Section, SectionTitle, TrialBadge } from "./ui";
 
@@ -65,7 +66,9 @@ export function FeaturePageTemplate({ c }: { c: FeatureContent }) {
             </ol>
           </div>
           <Reveal className="flex justify-center">
-            {c.mockup === "phone" ? <PhoneMockup className="animate-float" /> : <DashboardMockup className="rotate-[-2deg]" />}
+            {c.screen ? (
+              <ScreenShot name={c.screen.name} alt={c.screen.alt} show={c.screen.mobileOnly ? "mobile" : "auto"} />
+            ) : c.mockup === "phone" ? <PhoneMockup className="animate-float" /> : <DashboardMockup className="rotate-[-2deg]" />}
           </Reveal>
         </div>
       </Section>

@@ -6,7 +6,7 @@ import { PLANS } from "@/content/pricing";
 import { HERO, PILLARS, STEPS, BEFORE_AFTER, VS_TRADITIONAL, HOME_FAQ, HOME_FLAGS, TESTIMONIALS, NUMBERS } from "@/content/home";
 import { CtaButton, FinalCta, Icon, Reveal, Section, SectionTitle, TrialBadge } from "@/components/site/ui";
 import { PhoneMockup } from "@/components/site/PhoneMockup";
-import { DashboardMockup } from "@/components/site/DashboardMockup";
+import { ScreenShot } from "@/components/site/ScreenShot";
 import { ComparisonTable, FAQAccordion, FeatureGrid, PriceCalculator } from "@/components/site/blocks";
 
 export const Route = createFileRoute("/")({
@@ -17,7 +17,7 @@ export const Route = createFileRoute("/")({
       path: "/",
       jsonLd: [
         faqJsonLd(HOME_FAQ),
-        { "@context": "https://schema.org", "@type": "Organization", name: "Portym", url: SITE.url },
+        { "@context": "https://schema.org", "@type": "Organization", name: "Portym", url: SITE.url, logo: `${SITE.url}/logo-portym-escura.png`, email: SITE.email },
         {
           "@context": "https://schema.org", "@type": "SoftwareApplication", name: "Portym", applicationCategory: "BusinessApplication", operatingSystem: "Web",
           offers: PLANS.filter((p) => p.monthly).map((p) => ({ "@type": "Offer", name: p.label, price: p.monthly, priceCurrency: "BRL" })),
@@ -42,7 +42,7 @@ function Home() {
             <div className="mt-8"><TrialBadge dark /></div>
           </div>
           <div className="relative flex justify-center">
-            <DashboardMockup className="hidden rotate-[-4deg] sm:block" />
+            <ScreenShot name="inicio" alt="Tela inicial do painel do Portym" show="desktop" className="hidden rotate-[-2deg] sm:block" />
             <PhoneMockup className="animate-float sm:absolute sm:-bottom-16 sm:right-0 sm:rotate-[4deg]" />
           </div>
         </div>

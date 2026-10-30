@@ -3,13 +3,14 @@ import * as Icons from "lucide-react";
 import { ArrowRight, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SITE } from "@/content/site";
-import logoClara from "@/assets/logo-portym-clara.png.asset.json";
-import logoEscura from "@/assets/logo-portym-escura.png.asset.json";
+// Logos servidos de /public (o endereço da Lovable só funciona na hospedagem dela).
+const LOGO_CLARA = "/logo-portym-clara.png";
+const LOGO_ESCURA = "/logo-portym-escura.png";
 
 export function Logo({ variant = "dark", className }: { variant?: "light" | "dark"; className?: string }) {
   return (
     <img
-      src={variant === "light" ? logoClara.url : logoEscura.url}
+      src={variant === "light" ? LOGO_CLARA : LOGO_ESCURA}
       alt="Portym"
       width={474}
       height={382}

@@ -3,14 +3,12 @@ export const SITE = {
   url: "https://portal.portym.cloud",
   signupUrl: "https://painel.portym.cloud/cadastro",
   loginUrl: "https://painel.portym.cloud",
-  // Número de WhatsApp comercial/suporte (DDI + DDD + número). Substitua pelo número real.
-  whatsappNumber: "5511999999999",
-  email: "contato@portym.cloud",
+  // API do Portym (formulário de contato do site).
+  apiUrl: "https://api.portym.cloud/api",
+  email: "portym.adm@gmail.com",
   trialBadge: ["14 dias grátis", "Usuários ilimitados", "Cancele quando quiser", "Sem cartão de crédito"],
 };
 
-export const whatsappLink = (msg: string) =>
-  `https://wa.me/${SITE.whatsappNumber}?text=${encodeURIComponent(msg)}`;
 
 export type FeatureKey =
   | "gestao-de-locacao"
@@ -24,15 +22,15 @@ export type FeatureKey =
   | "vendas-e-comissoes";
 
 export const FEATURES: { slug: FeatureKey; title: string; short: string; icon: string }[] = [
-  { slug: "whatsapp-para-imobiliaria", title: "Atendimento no WhatsApp", short: "Atendente virtual que apresenta imóveis e agenda visitas.", icon: "MessageCircle" },
-  { slug: "cobranca-de-aluguel", title: "Cobrança automática", short: "Boleto, Pix e réguas de cobrança com multa e juros.", icon: "Receipt" },
+  { slug: "whatsapp-para-imobiliaria", title: "Atendimento no WhatsApp", short: "Robô com menu que apresenta imóveis e passa o interessado ao corretor.", icon: "MessageCircle" },
+  { slug: "cobranca-de-aluguel", title: "Cobrança automática", short: "Boleto com Pix, lembretes no WhatsApp, multa e juros.", icon: "Receipt" },
   { slug: "repasse-automatico", title: "Repasse via Pix", short: "Proprietário recebe no dia certo, com extrato claro.", icon: "ArrowLeftRight" },
-  { slug: "gestao-de-locacao", title: "Gestão de locação", short: "Contratos, vistorias, rescisões e reajustes.", icon: "FileText" },
-  { slug: "reajuste-de-aluguel", title: "Reajuste automático", short: "IGP-M e IPCA calculados com aviso prévio.", icon: "TrendingUp" },
-  { slug: "crm-imobiliario", title: "CRM imobiliário", short: "Funil, origem do lead e match de imóveis.", icon: "Users" },
+  { slug: "gestao-de-locacao", title: "Gestão de locação", short: "Contratos, cobranças, repasses e reajustes num só lugar.", icon: "FileText" },
+  { slug: "reajuste-de-aluguel", title: "Reajuste automático", short: "IGP-M e IPCA buscados no Banco Central e calculados.", icon: "TrendingUp" },
+  { slug: "crm-imobiliario", title: "CRM imobiliário", short: "Funil de arrastar, origem do cliente e aviso de imóvel compatível.", icon: "Users" },
   { slug: "portfolio-de-imoveis", title: "Portfólio de imóveis", short: "Vitrine online com link próprio e busca rápida.", icon: "Home" },
-  { slug: "portal-do-inquilino-e-proprietario", title: "Portal do inquilino e proprietário", short: "2ª via, extratos e informe de rendimentos.", icon: "KeyRound" },
-  { slug: "vendas-e-comissoes", title: "Vendas e comissões", short: "Venda, locação e temporada com comissão automática.", icon: "Handshake" },
+  { slug: "portal-do-inquilino-e-proprietario", title: "Portal do inquilino e proprietário", short: "2ª via, recibos, repasses e comprovantes.", icon: "KeyRound" },
+  { slug: "vendas-e-comissoes", title: "Vendas e comissões", short: "Venda, locação e temporada com comissão de captador e vendedor.", icon: "Handshake" },
 ];
 
 export const NAV_SEGMENTS = [

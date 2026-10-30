@@ -4,9 +4,9 @@ import { ArrowRight, Check, Minus, X } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Slider } from "@/components/ui/slider";
 import { cn } from "@/lib/utils";
-import { FEATURES, SITE, whatsappLink, type FeatureKey } from "@/content/site";
+import { FEATURES, SITE, type FeatureKey } from "@/content/site";
 import type { FAQ } from "@/content/features";
-import { PLANS, brl, planForProperties, priceFor, type Plan } from "@/content/pricing";
+import { ANNUAL_DISCOUNT, PLANS, brl, planForProperties, priceFor, type Plan } from "@/content/pricing";
 import { Icon, Reveal } from "./ui";
 
 export function FAQAccordion({ items, dark }: { items: FAQ[]; dark?: boolean }) {
@@ -67,14 +67,15 @@ export function CycleToggle({ cycle, onChange }: { cycle: "mensal" | "anual"; on
           onClick={() => onChange(c)}
           className={cn("rounded-full px-5 py-2 text-sm font-semibold capitalize transition", cycle === c ? "bg-primary text-primary-foreground" : "text-muted-foreground")}
         >
-          {c} {c === "anual" && <span className={cn("ml-1 text-xs", cycle === c ? "text-primary-foreground/80" : "text-primary")}>-20%</span>}
+          {c} {c === "anual" && <span className={cn("ml-1 text-xs", cycle === c ? "text-primary-foreground/80" : "text-primary")}>-{Math.round(ANNUAL_DISCOUNT * 100)}%</span>}
         </button>
       ))}
     </div>
   );
 }
 
-const consultorLink = whatsappLink("Olá! Tenho mais de 500 imóveis e gostaria de falar com um consultor do Portym.");
+// Acima de 500 imóveis: formulário de contato (a equipe Portym retorna).
+const consultorLink = "/contato";
 
 function PlanCard({ plan, cycle }: { plan: Plan; cycle: "mensal" | "anual" }) {
   const price = priceFor(plan, cycle);
@@ -82,6 +83,7 @@ function PlanCard({ plan, cycle }: { plan: Plan; cycle: "mensal" | "anual" }) {
   return (
     <div className={cn("relative flex flex-col rounded-[24px] border p-6", featured ? "border-primary bg-ink text-ink-foreground shadow-glow lg:-translate-y-3" : "border-border bg-card shadow-soft")}>
       {featured && <span className="absolute -top-3 left-6 rounded-full bg-accent px-3 py-1 text-xs font-bold text-ink">{plan.highlight}</span>}
+      {plan.name && <p className={cn("text-xs font-bold uppercase tracking-wider", featured ? "text-accent" : "text-primary")}>{plan.name}</p>}
       <h3 className="text-lg font-bold">{plan.label}</h3>
       {price != null ? (
         <>
@@ -100,7 +102,7 @@ function PlanCard({ plan, cycle }: { plan: Plan; cycle: "mensal" | "anual" }) {
         </>
       )}
       <ul className={cn("my-6 flex-1 space-y-2 text-sm", featured ? "text-ink-foreground/80" : "text-muted-foreground")}>
-        {["Todas as funcionalidades", "Usuários ilimitados", "Sem taxa por contrato", "Suporte por WhatsApp"].map((t) => (
+        {["Todas as funcionalidades", "Usuários ilimitados", "Sem taxa por contrato", "Treinamento da equipe"].map((t) => (
           <li key={t} className="flex gap-2">
             <Check className="h-4 w-4 shrink-0 text-accent" /> {t}
           </li>
@@ -111,7 +113,7 @@ function PlanCard({ plan, cycle }: { plan: Plan; cycle: "mensal" | "anual" }) {
           Testar grátis
         </a>
       ) : (
-        <a href={consultorLink} target="_blank" rel="noopener noreferrer" className="rounded-full border border-primary py-3 text-center text-sm font-semibold text-primary transition hover:bg-primary/5">
+        <a href={consultorLink} className="rounded-full border border-primary py-3 text-center text-sm font-semibold text-primary transition hover:bg-primary/5">
           Fale com um consultor
         </a>
       )}
@@ -152,7 +154,7 @@ export function PriceCalculator() {
       </div>
       <div className="flex flex-col justify-center rounded-[22px] bg-ink p-6 text-ink-foreground">
         <p className="text-sm text-ink-foreground/70">Plano ideal</p>
-        <p className="text-xl font-bold">{plan.label}</p>
+        <p className="text-xl font-bold">{plan.name ? `${plan.name} · ` : ""}{plan.label}</p>
         {price != null ? (
           <>
             <p className="mt-3 font-display text-4xl font-extrabold">{brl(price)}<span className="text-base font-normal text-ink-foreground/60">/mês</span></p>
@@ -160,7 +162,7 @@ export function PriceCalculator() {
             <a href={SITE.signupUrl} className="mt-6 rounded-full bg-accent py-3 text-center text-sm font-semibold text-ink">Testar grátis por 14 dias</a>
           </>
         ) : (
-          <a href={consultorLink} target="_blank" rel="noopener noreferrer" className="mt-6 rounded-full bg-accent py-3 text-center text-sm font-semibold text-ink">Fale com um consultor</a>
+          <a href={consultorLink} className="mt-6 rounded-full bg-accent py-3 text-center text-sm font-semibold text-ink">Fale com um consultor</a>
         )}
         <Link to="/precos" className="mt-3 text-center text-sm text-ink-foreground/70 underline-offset-4 hover:underline">Ver todos os planos</Link>
       </div>

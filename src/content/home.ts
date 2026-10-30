@@ -14,28 +14,28 @@ export const HERO = {
 };
 
 export const PILLARS = [
-  { icon: "MessageCircle", title: "Atende sozinho no WhatsApp", desc: "Responde em segundos, apresenta imóveis, qualifica o cliente e agenda visitas, a qualquer hora." },
-  { icon: "Repeat", title: "Cobra e repassa sozinho", desc: "Boleto e Pix enviados no WhatsApp, baixa automática e repasse por Pix ao proprietário." },
+  { icon: "MessageCircle", title: "Atende sozinho no WhatsApp", desc: "Responde na hora com um menu simples, mostra os imóveis que combinam com o cliente e avisa o corretor quando ele se interessa." },
+  { icon: "Repeat", title: "Cobra e repassa sozinho", desc: "Boleto com Pix enviado no WhatsApp, baixa automática e repasse ao proprietário." },
   { icon: "BadgeCheck", title: "Preço justo e transparente", desc: "Você paga pela quantidade de imóveis. Usuários ilimitados, sem taxa por contrato." },
 ];
 
 export const STEPS = [
-  { title: "Cadastre seus imóveis", desc: "Fotos, valores e contratos. Importamos sua planilha se você quiser." },
-  { title: "O robô atende no WhatsApp", desc: "Apresenta imóveis, entende o perfil e agenda a visita com o corretor." },
-  { title: "Feche o negócio", desc: "Contrato, garantias e comissões registrados num só lugar." },
+  { title: "Cadastre seus imóveis", desc: "Fotos, valores e proprietários. Nossa equipe treina você para começar." },
+  { title: "O robô atende no WhatsApp", desc: "Pergunta tipo, bairro, valor e quartos, mostra os imóveis e registra o interesse para o corretor." },
+  { title: "Feche o negócio", desc: "Contrato, entrada e comissões registrados num só lugar." },
   { title: "Cobrança e repasse automáticos", desc: "Inquilino recebe o Pix, proprietário recebe o repasse. Todo mês." },
 ];
 
 export const BEFORE_AFTER = {
-  before: ["Planilhas caóticas e versões diferentes", "Boleto gerado um a um", "Cobrar atrasado por ligação", "Repasse manual no internet banking", "Cliente sem resposta no fim de semana", "Reajuste esquecido"],
-  after: ["Tudo num só sistema, sempre atualizado", "Cobranças geradas para toda a carteira", "Régua automática no WhatsApp", "Repasse por Pix com extrato", "Atendente virtual 24 horas", "Reajuste IGP-M/IPCA com aviso prévio"],
+  before: ["Planilhas caóticas e versões diferentes", "Boleto gerado um a um", "Cobrar atrasado por ligação", "Repasse manual no internet banking", "Cliente esperando resposta", "Reajuste calculado na mão"],
+  after: ["Tudo num só sistema, sempre atualizado", "Cobranças geradas para toda a carteira", "Régua automática no WhatsApp", "Repasse automático com comprovante", "Robô responde na hora, no seu horário", "Reajuste IGP-M/IPCA calculado pelo sistema"],
 };
 
 export const VS_TRADITIONAL: { label: string; portym: string; traditional: string }[] = [
   { label: "Cobrança por usuário", portym: "Usuários ilimitados", traditional: "Geralmente cobrada por usuário" },
   { label: "Taxa por contrato", portym: "Sem taxa por contrato", traditional: "Comum em alguns modelos" },
-  { label: "Atendimento no WhatsApp", portym: "Atendente virtual nativo", traditional: "Integrações à parte" },
-  { label: "Repasse ao proprietário", portym: "Pix automático", traditional: "Frequentemente manual" },
+  { label: "Atendimento no WhatsApp", portym: "Robô de atendimento nativo", traditional: "Integrações à parte" },
+  { label: "Repasse ao proprietário", portym: "Automático", traditional: "Frequentemente manual" },
   { label: "Funcionalidades", portym: "Todas em todos os planos", traditional: "Módulos separados" },
   { label: "Preço", portym: "Publicado no site", traditional: "Sob consulta" },
 ];
@@ -45,7 +45,7 @@ export const HOME_FAQ: FAQ[] = [
   { q: "Preciso de cartão de crédito para o teste grátis?", a: "Não. Você testa por 14 dias sem cartão de crédito e cancela quando quiser." },
   { q: "Quantos usuários posso ter?", a: "Ilimitados em todos os planos. Você paga pela quantidade de imóveis, não por pessoa." },
   { q: "O Portym serve para corretor autônomo?", a: "Sim. O plano de entrada atende até 30 imóveis com todas as funcionalidades." },
-  { q: "Consigo migrar da minha planilha ou sistema atual?", a: "Sim. Ajudamos a importar seus dados durante o período de teste." },
+  { q: "Vocês ajudam a começar?", a: "Sim. A equipe Portym entra em contato e faz o treinamento para você e sua equipe usarem o sistema." },
   { q: "Meus dados estão seguros?", a: "Sim. Usamos conexão criptografada, controle de acesso por usuário e seguimos a LGPD." },
 ];
 
