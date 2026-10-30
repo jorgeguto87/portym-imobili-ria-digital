@@ -4,6 +4,8 @@ import { pageHead, faqJsonLd } from "@/lib/seo";
 import { DashboardMockup } from "./DashboardMockup";
 import { PhoneMockup } from "./PhoneMockup";
 import { ScreenShot } from "./ScreenShot";
+import { ArticleStrip } from "./ArticleCards";
+import type { ArticleSummary } from "@/lib/blogApi";
 import { FAQAccordion, FeatureGrid } from "./blocks";
 import { CtaButton, FinalCta, PageHero, Reveal, Section, SectionTitle, TrialBadge } from "./ui";
 
@@ -19,7 +21,7 @@ export const featureHead = (c: FeatureContent) =>
     jsonLd: [faqJsonLd(c.faq)],
   });
 
-export function FeaturePageTemplate({ c }: { c: FeatureContent }) {
+export function FeaturePageTemplate({ c, related = [] }: { c: FeatureContent; related?: ArticleSummary[] }) {
   return (
     <>
       <PageHero eyebrow={c.eyebrow} title={c.h1} subtitle={c.subtitle}>
@@ -90,6 +92,8 @@ export function FeaturePageTemplate({ c }: { c: FeatureContent }) {
         <SectionTitle eyebrow="Dúvidas" title="Perguntas frequentes" />
         <FAQAccordion items={c.faq} />
       </Section>
+
+      <ArticleStrip eyebrow="Do blog" title={`Artigos sobre ${c.name.toLowerCase()}`} articles={related} />
 
       <Section>
         <SectionTitle eyebrow="Veja também" title="Funcionalidades relacionadas" />

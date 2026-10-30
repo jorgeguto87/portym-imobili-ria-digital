@@ -16,6 +16,8 @@ export type FeatureContent = {
   mockup: "phone" | "dashboard";
   /** Tela real do sistema (substitui o mockup quando existe). */
   screen?: { name: ScreenName; alt: string; mobileOnly?: boolean };
+  /** Palavras usadas para escolher os "Artigos relacionados" do blog. */
+  blogKeywords: string[];
   benefits: { title: string; desc: string }[];
   faq: FAQ[];
   related: FeatureKey[];
@@ -38,6 +40,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Reajuste e renovação", desc: "Reajuste calculado por IGP-M ou IPCA e aviso de fim de contrato no painel." },
     ],
     mockup: "dashboard",
+    blogKeywords: ["gestão de locação", "administração de aluguel", "contrato de locação", "locação", "inquilino", "carteira de locação"],
     screen: { name: "locacao", alt: "Tela do contrato de locação no painel do Portym" },
     benefits: [
       { title: "Histórico completo", desc: "Cada contrato guarda cobranças, pagamentos, repasses e documentos." },
@@ -71,6 +74,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Pagamento confirmado", desc: "Baixa automática, recibo no portal do inquilino e repasse ao proprietário." },
     ],
     mockup: "phone",
+    blogKeywords: ["cobrança", "inadimplência", "boleto", "aluguel atrasado", "pix", "multa"],
     screen: { name: "cobranca", alt: "Tela de cobranças de aluguel no painel do Portym" },
     benefits: [
       { title: "Boleto com Pix e link", desc: "O inquilino paga como preferir: linha digitável, Pix ou link de pagamento." },
@@ -105,6 +109,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Pix enviado", desc: "O proprietário recebe o valor e o comprovante fica no portal." },
     ],
     mockup: "dashboard",
+    blogKeywords: ["repasse", "proprietário", "taxa de administração"],
     screen: { name: "repasse", alt: "Repasse automático e histórico de repasses no painel do Portym" },
     benefits: [
       { title: "No recebimento ou dia fixo", desc: "Escolha quando o repasse acontece." },
@@ -138,6 +143,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Aplique", desc: "As próximas cobranças já saem com o aluguel reajustado." },
     ],
     mockup: "dashboard",
+    blogKeywords: ["reajuste", "igp-m", "igpm", "ipca", "índice"],
     screen: { name: "reajuste", alt: "Tela de reajuste de aluguel por IGP-M e IPCA no Portym" },
     benefits: [
       { title: "IGP-M e IPCA", desc: "Índices oficiais com acumulado de 12 meses, direto do Banco Central." },
@@ -168,6 +174,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Imóvel novo, aviso na hora", desc: "Quando entra um imóvel compatível, o cliente é avisado." },
     ],
     mockup: "dashboard",
+    blogKeywords: ["crm", "lead", "funil", "captação", "cliente"],
     screen: { name: "crm", alt: "Funil de clientes do CRM do Portym" },
     benefits: [
       { title: "Funil visual", desc: "Arraste os clientes entre as etapas e veja tudo de uma vez." },
@@ -199,6 +206,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Corretor assume", desc: "Com o interesse do cliente já registrado no CRM." },
     ],
     mockup: "phone",
+    blogKeywords: ["whatsapp", "atendimento", "robô", "chatbot", "lead"],
     benefits: [
       { title: "Resposta na hora", desc: "Quem responde primeiro tem mais chance de fechar." },
       { title: "Imóveis do seu portfólio", desc: "Cartões com valor, quartos e link com todas as fotos." },
@@ -231,6 +239,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Compartilhe", desc: "WhatsApp, Instagram ou Facebook com prévia profissional." },
     ],
     mockup: "phone",
+    blogKeywords: ["portfólio", "vitrine", "anunciar", "divulgar imóveis", "fotos"],
     benefits: [
       { title: "Link próprio", desc: "Endereço da sua imobiliária para divulgar onde quiser." },
       { title: "Busca rápida", desc: "Filtros simples que o cliente entende." },
@@ -263,6 +272,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Menos atendimento", desc: "Sua equipe deixa de responder pedidos repetidos." },
     ],
     mockup: "phone",
+    blogKeywords: ["portal do inquilino", "portal do proprietário", "2ª via", "segunda via", "inquilino", "proprietário"],
     screen: { name: "portal", alt: "Portal do inquilino do Portym no celular", mobileOnly: true },
     benefits: [
       { title: "2ª via em segundos", desc: "Sem precisar falar com a imobiliária." },
@@ -296,6 +306,7 @@ export const FEATURE_PAGES: Record<FeatureKey, FeatureContent> = {
       { title: "Controle o pagamento", desc: "Marque quando cada corretor recebeu e guarde o comprovante." },
     ],
     mockup: "dashboard",
+    blogKeywords: ["comissão", "comissões", "venda de imóveis", "temporada", "corretor"],
     screen: { name: "comissoes", alt: "Tela de comissões dos corretores no Portym" },
     benefits: [
       { title: "Três tipos de negócio", desc: "Venda, locação e temporada no mesmo sistema." },

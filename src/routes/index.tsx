@@ -8,8 +8,11 @@ import { CtaButton, FinalCta, Icon, Reveal, Section, SectionTitle, TrialBadge } 
 import { PhoneMockup } from "@/components/site/PhoneMockup";
 import { ScreenShot } from "@/components/site/ScreenShot";
 import { ComparisonTable, FAQAccordion, FeatureGrid, PriceCalculator } from "@/components/site/blocks";
+import { ArticleStrip } from "@/components/site/ArticleCards";
+import { getLatestArticles } from "@/lib/blogApi";
 
 export const Route = createFileRoute("/")({
+  loader: () => getLatestArticles(),
   head: () =>
     pageHead({
       title: "Portym — Sistema para imobiliárias no automático",
@@ -28,6 +31,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const latest = Route.useLoaderData();
   return (
     <>
       <section className="relative overflow-hidden bg-hero pb-24 pt-32 text-ink-foreground sm:pt-40">
@@ -107,6 +111,7 @@ function Home() {
         <SectionTitle eyebrow="FAQ" title="Perguntas frequentes" />
         <FAQAccordion items={HOME_FAQ} />
       </Section>
+      <ArticleStrip eyebrow="Blog" title="Últimos artigos" articles={latest} />
       <FinalCta />
     </>
   );

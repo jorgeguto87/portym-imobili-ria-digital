@@ -152,6 +152,15 @@
   & p { margin: 0 0 1rem; line-height: 1.8; color: var(--color-muted-foreground); }
   & ul { margin: 0 0 1rem 1.2rem; list-style: disc; color: var(--color-muted-foreground); line-height: 1.8; }
   & strong { color: var(--color-foreground); }
+  & ol { margin: 0 0 1rem 1.2rem; list-style: decimal; color: var(--color-muted-foreground); line-height: 1.8; }
+  & h4 { font-size: 1.05rem; font-weight: 700; margin: 1.4rem 0 0.5rem; }
+  & a { color: var(--color-primary); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  & blockquote { margin: 1.2rem 0; padding-left: 1rem; border-left: 3px solid var(--color-primary); color: var(--color-muted-foreground); }
+  & table { width: 100%; margin: 1rem 0; border-collapse: collapse; font-size: 0.95rem; display: block; overflow-x: auto; }
+  & th, & td { border: 1px solid var(--color-border); padding: 0.5rem 0.75rem; text-align: left; }
+  & code { background: var(--color-muted); padding: 0.1rem 0.35rem; border-radius: 0.35rem; font-size: 0.9em; }
+  & img { max-width: 100%; height: auto; border-radius: 1rem; }
+  & .lead { font-size: 1.15rem; color: var(--color-foreground); }
 }
 
 @keyframes float-y {
